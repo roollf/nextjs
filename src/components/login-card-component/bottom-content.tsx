@@ -9,7 +9,7 @@ interface BottomContentProps extends React.HTMLAttributes<HTMLDivElement> {
 export const BottomContent = ({ children, ...rest }: BottomContentProps) => {
   return (
     <div
-      className="flex flex-col items-center justify-center gap-[20px]"
+      className="flex flex-col items-center justify-center"
       {...rest}
     >
       {children}
