@@ -42,7 +42,12 @@ export function LoginCardContainer() {
             type="text"
             placeholder="Email"
             defaultValue={formState.fieldValues.email}
-            className="w-[355px] h-[50px] shrink-0 bg-[#D1C8FF] rounded-[100px] p-[15px]"
+            className={clsx(
+              "w-[355px] h-[50px] shrink-0 bg-[#D1C8FF] rounded-[100px] p-[15px]",
+              {
+                "border border-red-400": formState.errors?.email,
+              }
+            )}
           />
           <span className="text-sm text-red-400">
             {formState.errors?.email}
@@ -52,7 +57,12 @@ export function LoginCardContainer() {
             type="password"
             placeholder="Senha"
             defaultValue={formState.fieldValues.password}
-            className="w-[355px] h-[50px] shrink-0 bg-[#D1C8FF] rounded-[100px] p-[15px]"
+            className={clsx(
+              "w-[355px] h-[50px] shrink-0 bg-[#D1C8FF] rounded-[100px] p-[15px]",
+              {
+                "border border-red-400": formState.errors?.password,
+              }
+            )}
           />
           <span className="text-sm text-red-400">
             {formState.errors?.password}
@@ -73,9 +83,6 @@ export function LoginCardContainer() {
             )}
           </button>
         </form>
-        {/* {formState.message === "success" && (
-          <span className="font-bold">Login realizado com sucesso!</span>
-        )} */}
       </LoginCardComponent.BottomContent>
     </LoginCardComponent.Root>
   );
