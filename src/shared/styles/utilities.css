@@ -1,0 +1,9 @@
+/* Adição de utilidades para estilos específicos */
+
+@tailwind utilities;
+
+@layer components {
+  .placeholder-transition::placeholder {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+}

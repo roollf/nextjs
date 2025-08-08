@@ -9,11 +9,11 @@
 import { revalidatePath } from "next/cache";
 
 // utils
-import { LoginSchema } from "@/utils/validations/auth/login-schema";
-import { FormErrorHandler } from "@/utils/handlers/form-error-handler";
+import { LoginSchema } from "@/features/user/utils/validations/login-schema";
+import { FormErrorHandler } from "@/shared/utils/handlers/form-error-handler";
 
 // types
-import { LoginFormState } from "@/@shared/types/login-form-state.type";
+import { LoginFormState } from "@/@shared_old/types/login-form-state.type";
 
 /**
  * @param prevState Estado anterior do formulário de login.

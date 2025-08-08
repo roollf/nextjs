@@ -1,5 +1,5 @@
 // component
-import { LoginCardContainer } from "@/containers/login-card-container/login-card-container";
+import { LoginCardContainer } from "@/features/user/views/login-card-view/login-card-view";
 
 export default function Home() {
   return (

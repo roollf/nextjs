@@ -2,8 +2,6 @@
 
 Este é um boilerplate oficial para projetos desenvolvidos com [Next.js](https://nextjs.org/) no VORTEX. Ele fornece uma base sólida para iniciar novos projetos, padronizando configurações, estruturas e ferramentas com foco em performance, escalabilidade e boas práticas.
 
----
-
 ## Features
 
 - Next.js
@@ -11,8 +9,6 @@ Este é um boilerplate oficial para projetos desenvolvidos com [Next.js](https:/
 - Prettier configurado
 - Aliases para caminhos com '@'
 - Estrutura de pastas organizada
-
----
 
 ## Como usar
 
