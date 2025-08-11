@@ -1,0 +1,12 @@
+/* Adição de utilidades para estilos específicos */
+
+@tailwind utilities;
+
+@layer components {
+  /* Adicionar aqui estilização baseado em alguma condição, como por exemplo:
+  .placeholder-transition::placeholder {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+    Esse código gera uma animação de transição para as cores no texto aplicado ao placeholder do input.
+  */
+}

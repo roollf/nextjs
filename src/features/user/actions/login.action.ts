@@ -3,17 +3,17 @@
  * para realizar o login do usuário.
  */
 
-"use server";
+'use server';
 
 // next
-import { revalidatePath } from "next/cache";
+import { revalidatePath } from 'next/cache';
 
 // utils
-import { LoginSchema } from "@/features/user/utils/validations/login-schema";
-import { FormErrorHandler } from "@/shared/utils/handlers/form-error-handler";
+import { LoginSchema } from '@/features/user/utils/validations/login-schema';
+import { FormErrorHandler } from '@/shared/utils/handlers/form-error-handler';
 
 // types
-import { LoginFormState } from "@/@shared_old/types/login-form-state.type";
+import { LoginFormState } from '@/shared/types/login-form-state.type';
 
 /**
  * @param prevState Estado anterior do formulário de login.
@@ -28,8 +28,8 @@ async function login(prevState: LoginFormState, formData: FormData) {
 
   // Capturar valores dos campos do formulário.
 
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
+  const email = formData.get('email') as string;
+  const password = formData.get('password') as string;
 
   // Validar campos do formulário.
 
@@ -38,13 +38,13 @@ async function login(prevState: LoginFormState, formData: FormData) {
       email,
       password,
     });
-    console.log("Logging in with:", { email: email, password: password });
+    console.log('Logging in with:', { email: email, password: password });
     return {
-      message: "success",
+      message: 'success',
       errors: undefined,
       fieldValues: {
-        email: "",
-        password: "",
+        email: '',
+        password: '',
       },
     };
     /**

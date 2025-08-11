@@ -10,12 +10,13 @@ import { login } from '@/features/user/actions/login.action';
 import { useAnimatedError } from '@/shared/hooks/ui/use-animated-error';
 
 // component
-import { LoginCardComponent } from '@/features/user/components/login-card-component';
+import { GenericCardComponent } from '@/shared/components/generic-card-component';
+import { GenericButtonComponent } from '@/shared/components/generic-button';
 
 // libs
 import { clsx } from 'clsx';
 
-export function LoginCardContainer() {
+export function LoginCardView() {
   const [formState, formAction, isPending] = useActionState(login, {
     message: '',
     errors: undefined,
@@ -29,8 +30,8 @@ export function LoginCardContainer() {
   const passwordErrorRef = useAnimatedError(formState.errors?.password);
 
   return (
-    <LoginCardComponent.Root>
-      <LoginCardComponent.UpperContent>
+    <GenericCardComponent.Root className="w-[440px] h-[460px] p-[40px] gap-[40px] rounded-bl-[10px] rounded-tl-[10px] bg-#E1DBFF">
+      <GenericCardComponent.UpperContent>
         <p className="text-[20px] text-center font-bold leading-normal not-italic text-[#170D29]">
           Bem vindo ao 'título do projeto'
         </p>
@@ -40,8 +41,8 @@ export function LoginCardContainer() {
         <p className="text-[18px] text-center font-normal leading-normal not-italic text-[#170D29]">
           Descrição do projeto
         </p>
-      </LoginCardComponent.UpperContent>
-      <LoginCardComponent.BottomContent>
+      </GenericCardComponent.UpperContent>
+      <GenericCardComponent.BottomContent>
         <form action={formAction} className="flex flex-col gap-[20px]">
           <input
             name="email"
@@ -93,23 +94,25 @@ export function LoginCardContainer() {
               className="text-sm text-red-400 transition-all duration-300 ease-in-out"
             />
           </div>
-          <button
-            disabled={isPending}
+          <GenericButtonComponent.Root
             type="submit"
+            disabled={isPending}
             className="w-[355px] h-[50px] shrink-0 rounded-[100px] cursor-pointer bg-[#5E45D8] hover:bg-[#6A52E0] active:bg-[#7560E8] transition-colors duration-300"
           >
-            {isPending ? (
-              <p className="text-[18px] text-center font-bold leading-normal not-italic text-[#FFFFFF]">
-                Acessando...
-              </p>
-            ) : (
-              <p className="text-[18px] text-center font-bold leading-normal not-italic text-[#FFFFFF]">
-                Acessar
-              </p>
-            )}
-          </button>
+            <GenericButtonComponent.Content>
+              {isPending ? (
+                <p className="text-[18px] text-center font-bold leading-normal not-italic text-[#FFFFFF]">
+                  Acessando...
+                </p>
+              ) : (
+                <p className="text-[18px] text-center font-bold leading-normal not-italic text-[#FFFFFF]">
+                  Acessar
+                </p>
+              )}
+            </GenericButtonComponent.Content>
+          </GenericButtonComponent.Root>
         </form>
-      </LoginCardComponent.BottomContent>
-    </LoginCardComponent.Root>
+      </GenericCardComponent.BottomContent>
+    </GenericCardComponent.Root>
   );
 }
