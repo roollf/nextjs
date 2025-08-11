@@ -54,7 +54,7 @@ src/
   │   └─ views/               # Orquestração de componentes compartilhados
 ```
 
-###### ¹. Algumas pastas podem conter apenas um arquivo `.gitkeep`. Ese arquivo serve para que o Git rastreie e mantenha o diretório no repositório mesmo quando ele estiver vazio. Quando adicionar arquivos reais, o `.gitkeep` pode ser removido sem problemas.
+###### ¹. Algumas pastas podem conter apenas um arquivo `.gitkeep`. Esse arquivo serve para que o Git rastreie e mantenha o diretório no repositório mesmo quando ele estiver vazio. Quando adicionar arquivos reais, o `.gitkeep` pode ser removido sem problemas.
 
 ## Como usar
 
