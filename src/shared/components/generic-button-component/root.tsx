@@ -5,20 +5,17 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 // interface
-interface RootProps extends React.HTMLAttributes<HTMLDivElement> {
+interface RootProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
 export const Root = ({ children, className, ...rest }: RootProps) => {
   return (
-    <div
-      className={twMerge(
-        'flex flex-col items-center justify-center',
-        className
-      )}
+    <button
+      className={twMerge('flex items-center justify-center', className)}
       {...rest}
     >
       {children}
-    </div>
+    </button>
   );
 };
