@@ -11,7 +11,7 @@ import { useAnimatedError } from '@/shared/hooks/ui/use-animated-error';
 
 // component
 import { GenericCardComponent } from '@/shared/components/generic-card-component';
-import { GenericButtonComponent } from '@/shared/components/generic-button';
+import { GenericButtonComponent } from '@/shared/components/generic-button-component';
 
 // libs
 import { clsx } from 'clsx';
@@ -30,7 +30,7 @@ export function LoginCardView() {
   const passwordErrorRef = useAnimatedError(formState.errors?.password);
 
   return (
-    <GenericCardComponent.Root className="w-[440px] h-[460px] p-[40px] gap-[40px] rounded-bl-[10px] rounded-tl-[10px] bg-#E1DBFF">
+    <GenericCardComponent.Root className="gap-[40px] w-[440px] h-[460px] p-[40px] rounded-bl-[10px] rounded-tl-[10px] bg-#E1DBFF">
       <GenericCardComponent.UpperContent>
         <p className="text-[20px] text-center font-bold leading-normal not-italic text-[#170D29]">
           Bem vindo ao 'título do projeto'
@@ -100,15 +100,9 @@ export function LoginCardView() {
             className="w-[355px] h-[50px] shrink-0 rounded-[100px] cursor-pointer bg-[#5E45D8] hover:bg-[#6A52E0] active:bg-[#7560E8] transition-colors duration-300"
           >
             <GenericButtonComponent.Content>
-              {isPending ? (
-                <p className="text-[18px] text-center font-bold leading-normal not-italic text-[#FFFFFF]">
-                  Acessando...
-                </p>
-              ) : (
-                <p className="text-[18px] text-center font-bold leading-normal not-italic text-[#FFFFFF]">
-                  Acessar
-                </p>
-              )}
+              <p className="text-[18px] text-center font-bold leading-normal not-italic text-[#FFFFFF]">
+                {isPending ? 'Acessando...' : 'Acessar'}
+              </p>
             </GenericButtonComponent.Content>
           </GenericButtonComponent.Root>
         </form>
